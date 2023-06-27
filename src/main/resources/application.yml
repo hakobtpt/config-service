@@ -1,0 +1,27 @@
+server:
+  port: 8888
+  tomcat:
+    connection-timeout: 2s
+    keep-alive-timeout: 15s
+    threads:
+      max: 50
+      min-spare: 5
+
+spring:
+  application:
+    name: config-service #A name for the current application
+  cloud:
+    config:
+      server:
+        git:
+          #The URL to the remote Git repository to use as the configuration data backend.
+          # For example, https://github.com/ PolarBookshop/config-repo.
+          uri: https://github.com/spring-cloud-native/config-repo
+          #By default, the server will return configuration data from the “main” branch.
+          default-label: master
+          #Time limit to establish a connection with the remote repository
+          timeout: 5
+          #Clones the remote repository locally on startup
+          clone-on-start: true
+          #Forces pulling the remote repository and discarding any local changes
+          force-pull: true
