@@ -3,7 +3,7 @@ on: push
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: hakobtp/config-service
+  IMAGE_NAME: hakobtpt/config-service
   VERSION: latest
 
 jobs:
